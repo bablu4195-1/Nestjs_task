@@ -8,7 +8,9 @@ import { TasksRepository } from './tasks.repository';
 
 @Injectable()
 export class TasksService {
-  constructor(private tasksRepository: TasksRepository) {}
+  constructor(
+  @InjectRepository(TasksRepository)
+  private tasksRepository: TasksRepository) {}
 
   // getAllTasks(): Task[] {
   //   return this.tasks;
